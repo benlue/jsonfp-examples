@@ -51,3 +51,25 @@ expr = {
 // Rebecca is the only person who earned more than $100000 and weighted less than 150 pounds
 var  result = jsonfp.apply(samples, expr);
 console.log( 'Result #2:\n%s', JSON.stringify(result, null, 4) );
+
+// Or do it the other way
+expr = {
+	filter: {
+		chain: [
+			[
+				{chain: [
+					{getter: 'salary'},
+					{'>': 100000}
+				]},
+				{chain: [
+					{getter: 'weight'},
+					{'<': 150}
+				]}
+			],
+			{reduce: 'and'}
+		]
+	}
+};
+
+var  result = jsonfp.apply(samples, expr);
+console.log( 'Result #2 by another formula:\n%s', JSON.stringify(result, null, 4) );
