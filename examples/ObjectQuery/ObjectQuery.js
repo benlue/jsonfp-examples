@@ -73,3 +73,6 @@ expr = {
 
 var  result = jsonfp.apply(samples, expr);
 console.log( 'Result #2 by another formula:\n%s', JSON.stringify(result, null, 4) );
+
+expr = {add: {'<': 10}},
+console.log( jsonfp.apply(1, expr) );
