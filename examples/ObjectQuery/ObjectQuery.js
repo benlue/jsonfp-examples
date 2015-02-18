@@ -15,12 +15,12 @@ var  samples = [
 
 // Example #1: look for person whose birthday is later than 1980-01-01
 var  expr = {
-	filter: {
-		chain: [
-			{getter: 'dob'},
-			{'>': '1980-01-01'}
-		]
-	}
+    filter: {
+        chain: [
+            {getter: 'dob'},
+            {'>': '1980-01-01'}
+        ]
+    }
 };
 
 // The result should have 6 people.
@@ -29,23 +29,23 @@ console.log( 'Result #1:\n%s', JSON.stringify(result, null, 4) );
 
 // Example #2: anyone who earns more than $100000 and weights less than 150 pounds
 expr = {
-	filter: {
-		chain: [
-			{
-				salary:
-					{chain: [
-						{getter: 'salary'},
-						{'>': 100000}
-					]},
-				weight:
-					{chain: [
-						{getter: 'weight'},
-						{'<': 150}
-					]}
-			},
-			{and: ['salary', 'weight']}
-		]
-	}
+    filter: {
+        chain: [
+            {
+                salary:
+                    {chain: [
+                        {getter: 'salary'},
+                        {'>': 100000}
+                    ]},
+                weight:
+                    {chain: [
+                        {getter: 'weight'},
+                        {'<': 150}
+                    ]}
+            },
+            {and: ['salary', 'weight']}
+        ]
+    }
 };
 
 // Rebecca is the only person who earned more than $100000 and weighted less than 150 pounds
@@ -54,25 +54,22 @@ console.log( 'Result #2:\n%s', JSON.stringify(result, null, 4) );
 
 // Or do it the other way
 expr = {
-	filter: {
-		chain: [
-			[
-				{chain: [
-					{getter: 'salary'},
-					{'>': 100000}
-				]},
-				{chain: [
-					{getter: 'weight'},
-					{'<': 150}
-				]}
-			],
-			{reduce: 'and'}
-		]
-	}
+    filter: {
+        chain: [
+            [
+                {chain: [
+                    {getter: 'salary'},
+                    {'>': 100000}
+                ]},
+                {chain: [
+                    {getter: 'weight'},
+                    {'<': 150}
+                ]}
+            ],
+            {reduce: 'and'}
+        ]
+    }
 };
 
 var  result = jsonfp.apply(samples, expr);
 console.log( 'Result #2 by another formula:\n%s', JSON.stringify(result, null, 4) );
-
-expr = {add: {'<': 10}},
-console.log( jsonfp.apply(1, expr) );
