@@ -20,62 +20,62 @@ var  pitchers = [
 // avgFormula is a JSON-FP formula to calcualte the average of a pitcher property
 // where '@prop' can be 'era' or 'salary'.
 var  avgFormula = {
-	formula: {
-		var: '@prop',
-		expr: {
-			'->': [
-				[
-					{'->': [
-						{map: {getter: '@prop'}},
-						{reduce: 'add'}
-					]},
-					{size: null}
-				],
-				{reduce: 'divide'}
-			]
-		}
-	}
+    formula: {
+        var: '@prop',
+        expr: {
+            '->': [
+                [
+                    {'->': [
+                        {map: {getter: '@prop'}},
+                        {reduce: 'add'}
+                    ]},
+                    {size: null}
+                ],
+                {reduce: 'divide'}
+            ]
+        }
+    }
 };
 
 
 // Instead of using expressons to calculate the average era or salary, we'll use
 // the 'avgFormula' to do so.
 var  expr = {
-	$stat: {
-		era: {
-			convert: {
-				var: {'@prop': 'era'},
-				formula: avgFormula
-			}
-		},
-		salary: {
-			convert: {
-				var: {'@prop': 'salary'},
-				formula: avgFormula
-			}
-		}
-	},
-	pitchers: {
-		filter: {
-			'->': [
-				[
-					{'->': [
-						{getter: 'era'},
-						{'<': '$stat.era'}
-					]},
-					{'->': [
-						{getter: 'salary'},
-						{'<': '$stat.salary'}
-					]}
-				],
-				{reduce: 'and'}
-			]
-		}
-	}
+    $stat: {
+        era: {
+            convert: {
+                var: {'@prop': 'era'},
+                formula: avgFormula
+            }
+        },
+        salary: {
+            convert: {
+                var: {'@prop': 'salary'},
+                formula: avgFormula
+            }
+        }
+    },
+    pitchers: {
+        filter: {
+            '->': [
+                [
+                    {'->': [
+                        {getter: 'era'},
+                        {'<': '$stat.era'}
+                    ]},
+                    {'->': [
+                        {getter: 'salary'},
+                        {'<': '$stat.salary'}
+                    ]}
+                ],
+                {reduce: 'and'}
+            ]
+        }
+    }
 };
 
 
 var  ctx = {},
-	 result = jsonfp.apply(ctx, pitchers, expr);
+     result = jsonfp.apply(ctx, pitchers, expr);
 console.log('The pitchers whose era and salary are both below average are:\n%s', JSON.stringify(result, null, 2) );
 console.log('...and the context becomes:\n%s', JSON.stringify(ctx, null, 2));
