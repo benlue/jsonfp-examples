@@ -1,9 +1,9 @@
 Metaprogramming -- Formula & Variable Substitution
 ==================================================
 
-In this example, we'll rewrite the [Baseball Pitchers](https://github.com/benlue/jsonfp-examples/blob/master/examples/bbPitcher/README.md) exercise using JSON-FP formula.
+In this example, we'll rewrite the [Baseball Pitchers](https://github.com/benlue/jsonfp-examples/blob/master/examples/bbPitcher/README.md) example using the JSON-FP formula.
 
-In the "Baseball Pitchers" example, the average ERA and salary of MLB pitchers have to be calculated in order to find out who has the better ERA and lower salary. The expressions used to calculate the average ERA and salary are pretty much the same except they use different property values of a pitcher. As a result, we can generalize those expressions into a formula and invoke that formula like we invoke functions in imperative programming languages.
+In the "Baseball Pitchers" example, the average ERA and salary of MLB pitchers have to be calculated in order to find out who has the better ERA and lower salary. The expressions used to calculate the average ERA and salary are pretty much the same except they use different property values of a pitcher. Trying to make programs more clearly and concisely, we can generalize those expressions into a formula and invoke that formula like we do with functions in imperative programming languages.
 
 ## Defining a formula
 A formula to calculate the average number of an input property can be coded as:
@@ -26,9 +26,9 @@ A formula to calculate the average number of an input property can be coded as:
 	    }
 	};
 
-As you can see a JSON-FP formula is also a JSON-FP expression. The **formula** operator declares its option is an JSON-FP expression template. The option to a formula operator has two properties:
+As you can see a JSON-FP formula is also a JSON-FP expression. The **formula** operator declares that its option is an JSON-FP expression template. The option to a **formula** operator has two properties:
 
-+ **var**: denotes the substitutable variable(s) in the expression template. This property can be a single variable name (string) or an array of variable names.
++ **var**: denotes the substitutable variable(s) in the expression template. This property can be a single variable name (string) or an array of variable names (if you want to substitute more than one variable in the expression template).
 
 + **expr**: this is the expression template with substitutable variables which are specified in the **var** property as explained above.
 

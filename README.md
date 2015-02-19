@@ -11,7 +11,7 @@ Below is a briefing:
 
 + [Object Query](https://github.com/benlue/jsonfp-examples/blob/master/examples/ObjectQuery/ObjectQuery.js) : shows how to use JSON-FP to query objects.
 
-+ [Baseball Pitchers](https://github.com/benlue/jsonfp-examples/blob/master/examples/bbPitcher/README.md) : finds the average era and salary of MLB pitchers, and which pitchers have better era and lower salary than the average.
++ [Baseball Pitchers](https://github.com/benlue/jsonfp-examples/blob/master/examples/bbPitcher/README.md) : finds the average ERA and salary of MLB pitchers, and which pitchers have better ERA and lower salary than the average.
 
 + [Metaprogramming](https://github.com/benlue/jsonfp-examples/blob/master/examples/metapro/README.md) : This example uses formula and variable substitution to make the ["Baseball Pitchers"](https://github.com/benlue/jsonfp-examples/blob/master/examples/bbPitcher/BaseballPitchers.js) example shorter and easier to read.
 
