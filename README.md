@@ -13,7 +13,7 @@ Below is a briefing:
 
 + [Baseball Pitchers](https://github.com/benlue/jsonfp-examples/blob/master/examples/bbPitcher/README.md) : finds the average era and salary of MLB pitchers, and which pitchers have better era and lower salary than the average.
 
-+ [Metaprogramming](https://github.com/benlue/jsonfp-examples/blob/master/examples/metapro/metaProgram.js) : This example uses formula and variable substitution to make the ["Baseball Pitchers"](https://github.com/benlue/jsonfp-examples/blob/master/examples/bbPitcher/BaseballPitchers.js) example shorter and easier to read.
++ [Metaprogramming](https://github.com/benlue/jsonfp-examples/blob/master/examples/metapro/README.md) : This example uses formula and variable substitution to make the ["Baseball Pitchers"](https://github.com/benlue/jsonfp-examples/blob/master/examples/bbPitcher/BaseballPitchers.js) example shorter and easier to read.
 
 ## Required version
 To run all of the above examples, the latest JSON-FP runtime (v0.1.0) is required.

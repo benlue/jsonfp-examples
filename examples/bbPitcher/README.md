@@ -42,8 +42,7 @@ If we look deeper into the expression, we'll find out the sum total of ERA is ob
     {'->': [
 	    {map: {getter: 'era'}},
 	    {reduce: 'add'}
-	]
-    }
+	]}
 	
 It uses the 'getter' operator to get the ERA of each pitcher and the resulting array is fed to the _{reduce: 'add'}_ expression to be summed up.
 
@@ -263,3 +262,6 @@ At this point, we've almost enclosed every required task in a single JSON-FP exp
             }
         }
     };
+
+## Source code
+The complete source code can be found [here](https://github.com/benlue/jsonfp-examples/blob/master/examples/bbPitcher/BaseballPitchers.js).
