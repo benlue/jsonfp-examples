@@ -1,6 +1,7 @@
 var  jsonfp = require('jsonfp');
 
 //////// example 1
+// evaluate an array
 var  expr = [1, 2, 3],
      result = jsonfp.apply({}, expr);
 
@@ -9,6 +10,7 @@ console.log('the result is the same array: %s', JSON.stringify(result));
 
 
 //////// example 2
+// evaluate an array which contains a JSON-FP expression
 expr = [1, {add: 2}, 3];
 result = jsonfp.apply(1, expr);
 
@@ -18,6 +20,7 @@ console.log('the JSON-FP runtime will have something to work on and the result b
 
 
 //////// example 3
+// string concatenation
 expr = {add: 'interesting'};
 result = jsonfp.apply('very ', expr);
 
