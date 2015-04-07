@@ -11,7 +11,7 @@ Below is a briefing:
 
 + [Object Query](https://github.com/benlue/jsonfp-examples/blob/master/examples/ObjectQuery) : shows how to use JSON-FP to query objects.
 
-+ [Iteration](https://github.com/benlue/jsonfp-examples/tree/master/examples/stream) : It's quite common to do repetitive tasks in a program. In imperative programming languages, you'll usually use the for-loop or while-loop to do iteration. In JSON-FP, you can use a much more elegant feature, the iterator stream, to achieve that.
++ [Iteration](https://github.com/benlue/jsonfp-examples/tree/master/examples/stream) : It's quite common to do repetitive tasks in a program. In imperative programming languages, you usually use the for-loop or while-loop statement to do iteration. In JSON-FP, you can use a much more elegant feature, the iterator stream, to achieve that.
 
 + [Baseball Pitchers](https://github.com/benlue/jsonfp-examples/blob/master/examples/bbPitcher/README.md) : finds the average ERA and salary of MLB pitchers, and which pitchers have better ERA and lower salary than the average.
 
