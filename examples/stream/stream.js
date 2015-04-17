@@ -1,4 +1,4 @@
-var  jsonfp = require('./lib/lamdaApp.js');
+var  jsonfp = require('jsonfp');
 
 jsonfp.init();
 
